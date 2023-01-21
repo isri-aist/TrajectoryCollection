@@ -1,0 +1,4 @@
+name: TrajectoryCollection documentation
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
