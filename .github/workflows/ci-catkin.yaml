@@ -60,7 +60,7 @@ jobs:
           set -e
           set -x
           curl -1sLf 'https://dl.cloudsmith.io/public/mc-rtc/${{ matrix.mc-rtc-version }}/setup.deb.sh' | sudo -E bash
-          sudo apt-get install -qq libspacevecalg-dev
+          sudo apt-get install -qq libeigen3-dev libspacevecalg-dev
       - name: Setup catkin workspace
         run: |
           mkdir -p ${GITHUB_WORKSPACE}/catkin_ws/src/

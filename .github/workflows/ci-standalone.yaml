@@ -32,7 +32,7 @@ jobs:
           apt-mirrors:
             mc-rtc:
               cloudsmith: mc-rtc/head
-          apt: cmake libspacevecalg-dev libgtest-dev
+          apt: cmake libeigen3-dev libspacevecalg-dev libgtest-dev
     - name: Install GTest
       if: matrix.os == 'ubuntu-18.04'
       uses: jrl-umi3218/github-actions/install-dependencies@master
