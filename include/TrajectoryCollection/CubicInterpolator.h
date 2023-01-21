@@ -2,9 +2,9 @@
 
 #include <SpaceVecAlg/SpaceVecAlg>
 
-#include <BaselineWalkingController/trajectory/CubicHermiteSpline.h>
+#include <TrajectoryCollection/CubicHermiteSpline.h>
 
-namespace BWC
+namespace TrajectoryCollection
 {
 /** \brief Calculate the value interpolating from start to end.
     \tparam T value type
@@ -291,4 +291,4 @@ protected:
   //! Function to calculate the ratio of interpolation points
   std::shared_ptr<CubicHermiteSpline<Vector1d>> func_;
 };
-} // namespace BWC
+} // namespace TrajectoryCollection

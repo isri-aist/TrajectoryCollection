@@ -2,9 +2,9 @@
 
 #include <Eigen/Core>
 
-#include <BaselineWalkingController/trajectory/Func.h>
+#include <TrajectoryCollection/Func.h>
 
-namespace BWC
+namespace TrajectoryCollection
 {
 /** \brief Type of boundary constraint. */
 enum class BoundaryConstraintType
@@ -218,4 +218,4 @@ protected:
   //! Way points
   std::map<double, T> points_;
 };
-} // namespace BWC
+} // namespace TrajectoryCollection

@@ -1,7 +1,7 @@
-#include <BaselineWalkingController/trajectory/CubicSpline.h>
+#include <TrajectoryCollection/CubicSpline.h>
 
-namespace BWC
+namespace TrajectoryCollection
 {
 template class CubicSpline<Eigen::Vector3d>;
 template class CubicSpline<Eigen::VectorXd>;
-} // namespace BWC
+} // namespace TrajectoryCollection

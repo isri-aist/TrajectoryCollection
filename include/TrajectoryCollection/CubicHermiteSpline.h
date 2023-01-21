@@ -2,9 +2,9 @@
 
 #include <Eigen/Core>
 
-#include <BaselineWalkingController/trajectory/Func.h>
+#include <TrajectoryCollection/Func.h>
 
-namespace BWC
+namespace TrajectoryCollection
 {
 /** \brief Cubic Hermite spline.
     \tparam T function value type
@@ -244,4 +244,4 @@ protected:
   //! Times, positions, and velocities in way points
   std::map<double, std::pair<T, T>> points_;
 };
-} // namespace BWC
+} // namespace TrajectoryCollection
