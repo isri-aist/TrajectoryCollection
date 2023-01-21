@@ -14,15 +14,18 @@ option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 include(cmake/base.cmake)
 project(trajectory_collection LANGUAGES CXX)
 
-# Eigen
-find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
+# SpaceVecAlg
+add_project_dependency(SpaceVecAlg REQUIRED)
 
 if(DEFINED CATKIN_DEVEL_PREFIX)
   set(DOXYGEN_HTML_OUTPUT html)
   find_package(catkin REQUIRED COMPONENTS
     roscpp
   )
+
+  # Eigen
+  find_package(Eigen3 REQUIRED)
+  include_directories(${EIGEN3_INCLUDE_DIR})
 
   catkin_package(
     CATKIN_DEPENDS

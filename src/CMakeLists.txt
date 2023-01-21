@@ -2,6 +2,7 @@ add_library(TrajectoryCollection
   CubicHermiteSpline.cpp
   CubicSpline.cpp
   )
+target_link_libraries(TrajectoryCollection PUBLIC SpaceVecAlg::SpaceVecAlg)
 if(DEFINED CATKIN_DEVEL_PREFIX)
   target_link_libraries(TrajectoryCollection PUBLIC ${catkin_LIBRARIES})
 endif()
