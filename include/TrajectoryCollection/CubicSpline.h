@@ -9,7 +9,10 @@ namespace TrajectoryCollection
 /** \brief Type of boundary constraint. */
 enum class BoundaryConstraintType
 {
-  Velocity,
+  //! Velocity constraint
+  Velocity = 0,
+
+  //! Acceleration constraint
   Acceleration
 };
 
@@ -144,7 +147,7 @@ public:
       else
       {
         throw std::runtime_error("[CubicSpline] Unsupported type of boundary constraint: "
-                                 + std::to_string(bcStart_.type));
+                                 + std::to_string(static_cast<int>(bcStart_.type)));
       }
       if(bcEnd_.type == BoundaryConstraintType::Velocity)
       {
@@ -158,7 +161,7 @@ public:
       else
       {
         throw std::runtime_error("[CubicSpline] Unsupported type of boundary constraint: "
-                                 + std::to_string(bcEnd_.type));
+                                 + std::to_string(static_cast<int>(bcEnd_.type)));
       }
 
       // Calculate yd by solving tridiagonalSystem
