@@ -32,7 +32,7 @@ if(DEFINED CATKIN_DEVEL_PREFIX)
     roscpp
     DEPENDS EIGEN3
     INCLUDE_DIRS include
-    LIBRARIES TrajectoryCollection
+    LIBRARIES
   )
 
   include_directories(include ${catkin_INCLUDE_DIRS})
@@ -43,7 +43,7 @@ else()
   option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)
 endif()
 
-add_subdirectory(src)
+add_subdirectory(include)
 
 if(BUILD_TESTING OR CATKIN_ENABLE_TESTING)
   add_subdirectory(tests)

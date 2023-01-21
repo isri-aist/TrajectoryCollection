@@ -1,16 +1,13 @@
-add_library(TrajectoryCollection
-  CubicHermiteSpline.cpp
-  CubicSpline.cpp
-  )
-target_link_libraries(TrajectoryCollection PUBLIC SpaceVecAlg::SpaceVecAlg)
+add_library(TrajectoryCollection INTERFACE)
+target_link_libraries(TrajectoryCollection INTERFACE SpaceVecAlg::SpaceVecAlg)
 if(DEFINED CATKIN_DEVEL_PREFIX)
-  target_link_libraries(TrajectoryCollection PUBLIC ${catkin_LIBRARIES})
+  target_link_libraries(TrajectoryCollection INTERFACE ${catkin_LIBRARIES})
 endif()
-target_include_directories(TrajectoryCollection PUBLIC
+target_include_directories(TrajectoryCollection INTERFACE
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
-target_compile_features(TrajectoryCollection PUBLIC cxx_std_17)
+target_compile_features(TrajectoryCollection INTERFACE cxx_std_17)
 
 if(BUILD_SHARED_LIBS)
   set_target_properties(TrajectoryCollection PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR} VERSION ${PROJECT_VERSION})
