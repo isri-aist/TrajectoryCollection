@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boundaryconstraint_71',['BoundaryConstraint',['../structTrajectoryCollection_1_1BoundaryConstraint.html#a119b79eabdb27c4eeff8dff103b1002d',1,'TrajectoryCollection::BoundaryConstraint']]]
+  ['boundaryconstraint_71',['BoundaryConstraint',['../structTrajColl_1_1BoundaryConstraint.html#a7a55d6f6fdc4bf1e56744e99717a2445',1,'TrajColl::BoundaryConstraint']]]
 ];

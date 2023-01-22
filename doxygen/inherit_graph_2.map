@@ -1,9 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classTrajectoryCollection_1_1Func.html" title="Mathematical function." alt="" coords="5,71,156,112"/>
-<area shape="rect" id="node2" href="$classTrajectoryCollection_1_1Polynomial.html" title=" " alt="" coords="218,5,375,47"/>
-<area shape="rect" id="node4" href="$classTrajectoryCollection_1_1PiecewiseFunc.html" title="Piecewise function." alt="" coords="215,71,378,112"/>
-<area shape="rect" id="node7" href="$classTrajectoryCollection_1_1Polynomial.html" title="Polynomial function." alt="" coords="204,136,389,177"/>
-<area shape="rect" id="node3" href="$classTrajectoryCollection_1_1Constant.html" title="Constant function." alt="" coords="461,5,611,47"/>
-<area shape="rect" id="node5" href="$classTrajectoryCollection_1_1CubicHermiteSpline.html" title="Cubic Hermite spline." alt="" coords="437,71,635,112"/>
-<area shape="rect" id="node6" href="$classTrajectoryCollection_1_1CubicSpline.html" title="Cubic spline." alt="" coords="461,136,611,177"/>
+<area shape="rect" id="node1" href="$classTrajColl_1_1Func.html" title="Mathematical function." alt="" coords="5,71,152,98"/>
+<area shape="rect" id="node2" href="$classTrajColl_1_1Polynomial.html" title=" " alt="" coords="230,5,381,47"/>
+<area shape="rect" id="node4" href="$classTrajColl_1_1PiecewiseFunc.html" title="Piecewise function." alt="" coords="200,71,411,98"/>
+<area shape="rect" id="node7" href="$classTrajColl_1_1Polynomial.html" title="Polynomial function." alt="" coords="230,123,381,164"/>
+<area shape="rect" id="node3" href="$classTrajColl_1_1Constant.html" title="Constant function." alt="" coords="494,13,669,39"/>
+<area shape="rect" id="node5" href="$classTrajColl_1_1CubicHermiteSpline.html" title="Cubic Hermite spline." alt="" coords="459,67,704,94"/>
+<area shape="rect" id="node6" href="$classTrajColl_1_1CubicSpline.html" title="Cubic spline." alt="" coords="485,118,677,145"/>
 </map>

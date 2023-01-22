@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['acceleration_0',['Acceleration',['../namespaceTrajectoryCollection.html#a79dbf5d86d9b756770258095aaa8d7eba3b926d163371fd620b09b63219b12f52',1,'TrajectoryCollection']]],
-  ['appendfunc_1',['appendFunc',['../classTrajectoryCollection_1_1PiecewiseFunc.html#a591c858d9101f74b07ec42f1f1731bd0',1,'TrajectoryCollection::PiecewiseFunc']]],
-  ['appendpoint_2',['appendPoint',['../classTrajectoryCollection_1_1CubicHermiteSpline.html#a206864bce015a94b5d3d1eb1ca68d455',1,'TrajectoryCollection::CubicHermiteSpline::appendPoint()'],['../classTrajectoryCollection_1_1CubicInterpolator.html#a676de291d47909496d9e19939ef7ab24',1,'TrajectoryCollection::CubicInterpolator::appendPoint()'],['../classTrajectoryCollection_1_1CubicSpline.html#a68688cc7edba15212054b727ead07490',1,'TrajectoryCollection::CubicSpline::appendPoint()']]],
-  ['argsegment_3',['argSegment',['../classTrajectoryCollection_1_1CubicHermiteSpline.html#a6ba786f46f307f6114275f25c46e3fcf',1,'TrajectoryCollection::CubicHermiteSpline']]]
+  ['acceleration_0',['Acceleration',['../namespaceTrajColl.html#ad2ea128f14ea130239b8ad02072e54bea3b926d163371fd620b09b63219b12f52',1,'TrajColl']]],
+  ['appendfunc_1',['appendFunc',['../classTrajColl_1_1PiecewiseFunc.html#a17f0b942621aa98b96a0b38c629b4bd7',1,'TrajColl::PiecewiseFunc']]],
+  ['appendpoint_2',['appendPoint',['../classTrajColl_1_1CubicHermiteSpline.html#adced57bf11c86b1f21d622fe4befe546',1,'TrajColl::CubicHermiteSpline::appendPoint()'],['../classTrajColl_1_1CubicInterpolator.html#abbd2128114031c014cb8c2147e94b4ad',1,'TrajColl::CubicInterpolator::appendPoint()'],['../classTrajColl_1_1CubicSpline.html#a173498d634bcb2859a0aa3641331fc80',1,'TrajColl::CubicSpline::appendPoint()']]],
+  ['argsegment_3',['argSegment',['../classTrajColl_1_1CubicHermiteSpline.html#af67d419acc8918f958d8efd8033a1f9a',1,'TrajColl::CubicHermiteSpline']]]
 ];

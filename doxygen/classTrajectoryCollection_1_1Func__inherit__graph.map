@@ -1,9 +1,0 @@
-<map id="TrajectoryCollection::Func&lt; T &gt;" name="TrajectoryCollection::Func&lt; T &gt;">
-<area shape="rect" id="node1" title="Mathematical function." alt="" coords="5,71,156,112"/>
-<area shape="rect" id="node2" href="$classTrajectoryCollection_1_1Polynomial.html" title=" " alt="" coords="211,17,360,43"/>
-<area shape="rect" id="node4" href="$classTrajectoryCollection_1_1PiecewiseFunc.html" title="Piecewise function." alt="" coords="204,71,367,112"/>
-<area shape="rect" id="node7" href="$classTrajectoryCollection_1_1Polynomial.html" title="Polynomial function." alt="" coords="210,136,361,177"/>
-<area shape="rect" id="node3" href="$classTrajectoryCollection_1_1Constant.html" title="Constant function." alt="" coords="438,5,589,47"/>
-<area shape="rect" id="node5" href="$classTrajectoryCollection_1_1CubicHermiteSpline.html" title="Cubic Hermite spline." alt="" coords="415,71,612,112"/>
-<area shape="rect" id="node6" href="$classTrajectoryCollection_1_1CubicSpline.html" title="Cubic spline." alt="" coords="438,136,589,177"/>
-</map>

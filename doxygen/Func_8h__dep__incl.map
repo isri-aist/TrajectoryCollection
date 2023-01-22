@@ -1,6 +1,6 @@
-<map id="/home/runner/work/TrajectoryCollection/TrajectoryCollection/catkin_ws/src/TrajectoryCollection/include/TrajectoryCollection/Func.h" name="/home/runner/work/TrajectoryCollection/TrajectoryCollection/catkin_ws/src/TrajectoryCollection/include/TrajectoryCollection/Func.h">
-<area shape="rect" id="node1" title=" " alt="" coords="229,5,481,76"/>
-<area shape="rect" id="node2" href="$CubicHermiteSpline_8h.html" title=" " alt="" coords="5,124,356,195"/>
-<area shape="rect" id="node4" href="$CubicSpline_8h.html" title=" " alt="" coords="381,124,679,195"/>
-<area shape="rect" id="node3" href="$CubicInterpolator_8h.html" title=" " alt="" coords="14,243,347,313"/>
+<map id="/home/runner/work/TrajectoryCollection/TrajectoryCollection/catkin_ws/src/TrajectoryCollection/include/TrajColl/Func.h" name="/home/runner/work/TrajectoryCollection/TrajectoryCollection/catkin_ws/src/TrajectoryCollection/include/TrajColl/Func.h">
+<area shape="rect" id="node1" title=" " alt="" coords="159,5,405,76"/>
+<area shape="rect" id="node2" href="$CubicHermiteSpline_8h.html" title=" " alt="" coords="5,124,276,195"/>
+<area shape="rect" id="node4" href="$CubicSpline_8h.html" title=" " alt="" coords="300,124,547,195"/>
+<area shape="rect" id="node3" href="$CubicInterpolator_8h.html" title=" " alt="" coords="15,243,267,313"/>
 </map>

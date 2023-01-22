@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['t0_5f_46',['t0_',['../classTrajectoryCollection_1_1Polynomial.html#a556e0339aaf96cc00f153d19e0b68aa2',1,'TrajectoryCollection::Polynomial']]],
-  ['tlowerlimit_5f_47',['tLowerLimit_',['../classTrajectoryCollection_1_1PiecewiseFunc.html#a9c117991f2692dee755d8dc8fe71e1f5',1,'TrajectoryCollection::PiecewiseFunc']]],
-  ['trajectorycollection_48',['TrajectoryCollection',['../namespaceTrajectoryCollection.html',1,'']]],
-  ['type_49',['type',['../structTrajectoryCollection_1_1BoundaryConstraint.html#a77821b2e3f687f48cc5c824be41025da',1,'TrajectoryCollection::BoundaryConstraint']]]
+  ['t0_5f_46',['t0_',['../classTrajColl_1_1Polynomial.html#a8baa3059a9f733edef5c7bfc872242d8',1,'TrajColl::Polynomial']]],
+  ['tlowerlimit_5f_47',['tLowerLimit_',['../classTrajColl_1_1PiecewiseFunc.html#a05bba859efd92cf9980306405a0fa928',1,'TrajColl::PiecewiseFunc']]],
+  ['trajcoll_48',['TrajColl',['../namespaceTrajColl.html',1,'']]],
+  ['type_49',['type',['../structTrajColl_1_1BoundaryConstraint.html#a67417a95537203f3f617bafda71f0cff',1,'TrajColl::BoundaryConstraint']]]
 ];

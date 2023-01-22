@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['trajectorycollection_62',['TrajectoryCollection',['../namespaceTrajectoryCollection.html',1,'']]]
+  ['trajcoll_62',['TrajColl',['../namespaceTrajColl.html',1,'']]]
 ];

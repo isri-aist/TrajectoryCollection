@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['func_85',['Func',['../classTrajectoryCollection_1_1Func.html#a432217c815805b35e472a0138710c0cb',1,'TrajectoryCollection::Func']]]
+  ['func_85',['Func',['../classTrajColl_1_1Func.html#ac952df2429c2e6e6c629f856895a464d',1,'TrajColl::Func']]]
 ];

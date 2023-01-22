@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['value_50',['value',['../structTrajectoryCollection_1_1BoundaryConstraint.html#a75f800ca27d46611d2e14d8ed8798787',1,'TrajectoryCollection::BoundaryConstraint']]],
-  ['vector1d_51',['Vector1d',['../classTrajectoryCollection_1_1CubicInterpolator.html#a555d420b4920832830bf6dfa219c2491',1,'TrajectoryCollection::CubicInterpolator']]],
-  ['velocity_52',['Velocity',['../namespaceTrajectoryCollection.html#a79dbf5d86d9b756770258095aaa8d7eba88156d46910a2d733443c339a9231d12',1,'TrajectoryCollection']]]
+  ['value_50',['value',['../structTrajColl_1_1BoundaryConstraint.html#a40b1cbe06b4bd724e11f29dd5e1d0a58',1,'TrajColl::BoundaryConstraint']]],
+  ['vector1d_51',['Vector1d',['../classTrajColl_1_1CubicInterpolator.html#aa4ac5acf90d37ad45a6bab019fac791b',1,'TrajColl::CubicInterpolator']]],
+  ['velocity_52',['Velocity',['../namespaceTrajColl.html#ad2ea128f14ea130239b8ad02072e54bea88156d46910a2d733443c339a9231d12',1,'TrajColl']]]
 ];

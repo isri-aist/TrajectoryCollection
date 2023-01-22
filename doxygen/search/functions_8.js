@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['piecewisefunc_91',['PiecewiseFunc',['../classTrajectoryCollection_1_1PiecewiseFunc.html#ac8ee35e4f990fb7c71a9237a812bc10c',1,'TrajectoryCollection::PiecewiseFunc']]],
-  ['points_92',['points',['../classTrajectoryCollection_1_1CubicHermiteSpline.html#ae4637ef83a986aaf25e86997c39d631e',1,'TrajectoryCollection::CubicHermiteSpline::points()'],['../classTrajectoryCollection_1_1CubicInterpolator.html#a2ec889a5e50d8ef8633dcc43a71abd3f',1,'TrajectoryCollection::CubicInterpolator::points()'],['../classTrajectoryCollection_1_1CubicSpline.html#a8a1859195d25cde2f70bf46775dec8b1',1,'TrajectoryCollection::CubicSpline::points()']]],
-  ['polynomial_93',['Polynomial',['../classTrajectoryCollection_1_1Polynomial.html#abf958fbdf517b7f53caee7ed54a64c60',1,'TrajectoryCollection::Polynomial']]]
+  ['piecewisefunc_91',['PiecewiseFunc',['../classTrajColl_1_1PiecewiseFunc.html#a0930745a43d6f8e3954360a7b755b8d9',1,'TrajColl::PiecewiseFunc']]],
+  ['points_92',['points',['../classTrajColl_1_1CubicHermiteSpline.html#a33489f07b1781d3eb9f982983aedd1fc',1,'TrajColl::CubicHermiteSpline::points()'],['../classTrajColl_1_1CubicInterpolator.html#a61abd2f9662ad33335cc83e17d195f0e',1,'TrajColl::CubicInterpolator::points()'],['../classTrajColl_1_1CubicSpline.html#afa99870544eba39d71fc0c7052256519',1,'TrajColl::CubicSpline::points()']]],
+  ['polynomial_93',['Polynomial',['../classTrajColl_1_1Polynomial.html#a307b497550483b74bb59f0c23f34635d',1,'TrajColl::Polynomial']]]
 ];

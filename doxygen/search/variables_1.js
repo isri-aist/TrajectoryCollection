@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coeff_5f_98',['coeff_',['../classTrajectoryCollection_1_1Polynomial.html#a444e882b261d8fa2c2f2558891601c27',1,'TrajectoryCollection::Polynomial']]]
+  ['coeff_5f_98',['coeff_',['../classTrajColl_1_1Polynomial.html#a063fcac3cfc76fd336ef62abef666937',1,'TrajColl::Polynomial']]]
 ];

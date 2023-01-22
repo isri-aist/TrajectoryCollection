@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['bcend_5f_4',['bcEnd_',['../classTrajectoryCollection_1_1CubicSpline.html#af0cbf98ba8d3ad1a6e414317a86c4d7c',1,'TrajectoryCollection::CubicSpline']]],
-  ['bcstart_5f_5',['bcStart_',['../classTrajectoryCollection_1_1CubicSpline.html#a04b9623bc6f55aae6733bc3ebd81f3bc',1,'TrajectoryCollection::CubicSpline']]],
-  ['boundaryconstraint_6',['BoundaryConstraint',['../structTrajectoryCollection_1_1BoundaryConstraint.html',1,'TrajectoryCollection::BoundaryConstraint&lt; T &gt;'],['../structTrajectoryCollection_1_1BoundaryConstraint.html#a119b79eabdb27c4eeff8dff103b1002d',1,'TrajectoryCollection::BoundaryConstraint::BoundaryConstraint()']]],
-  ['boundaryconstrainttype_7',['BoundaryConstraintType',['../namespaceTrajectoryCollection.html#a79dbf5d86d9b756770258095aaa8d7eb',1,'TrajectoryCollection']]]
+  ['bcend_5f_4',['bcEnd_',['../classTrajColl_1_1CubicSpline.html#a7f15253059e87b906782a155f0e3e715',1,'TrajColl::CubicSpline']]],
+  ['bcstart_5f_5',['bcStart_',['../classTrajColl_1_1CubicSpline.html#acf5f672136103e39f8bb5310c460a833',1,'TrajColl::CubicSpline']]],
+  ['boundaryconstraint_6',['BoundaryConstraint',['../structTrajColl_1_1BoundaryConstraint.html',1,'TrajColl::BoundaryConstraint&lt; T &gt;'],['../structTrajColl_1_1BoundaryConstraint.html#a7a55d6f6fdc4bf1e56744e99717a2445',1,'TrajColl::BoundaryConstraint::BoundaryConstraint()']]],
+  ['boundaryconstrainttype_7',['BoundaryConstraintType',['../namespaceTrajColl.html#ad2ea128f14ea130239b8ad02072e54be',1,'TrajColl']]]
 ];

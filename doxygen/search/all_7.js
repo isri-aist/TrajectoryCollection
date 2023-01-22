@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['linearpolynomial_34',['LinearPolynomial',['../namespaceTrajectoryCollection.html#a8327705993a880aced299fa901e5be3d',1,'TrajectoryCollection']]]
+  ['linearpolynomial_34',['LinearPolynomial',['../namespaceTrajColl.html#a87da44dd36fc0c4a0fc733b5d37388aa',1,'TrajColl']]]
 ];

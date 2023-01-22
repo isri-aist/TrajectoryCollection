@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cubicpolynomial_107',['CubicPolynomial',['../namespaceTrajectoryCollection.html#a73bfc371fc8aaa98128b848a350917f5',1,'TrajectoryCollection']]]
+  ['cubicpolynomial_107',['CubicPolynomial',['../namespaceTrajColl.html#a39dee70bbe61e71c1a187421383549e3',1,'TrajColl']]]
 ];

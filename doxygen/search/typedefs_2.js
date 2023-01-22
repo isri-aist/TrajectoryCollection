@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quadraticpolynomial_109',['QuadraticPolynomial',['../namespaceTrajectoryCollection.html#a13274ece61918914dfad5d46ed574b78',1,'TrajectoryCollection']]]
+  ['quadraticpolynomial_109',['QuadraticPolynomial',['../namespaceTrajColl.html#acb75b024dbf4432d66849b8a2fc33eca',1,'TrajColl']]]
 ];

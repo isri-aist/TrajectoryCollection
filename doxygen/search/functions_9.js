@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['setdomainlowerlimit_94',['setDomainLowerLimit',['../classTrajectoryCollection_1_1PiecewiseFunc.html#a1b60515ffcf2c0dbc90afc64a4b4e715',1,'TrajectoryCollection::PiecewiseFunc']]],
-  ['starttime_95',['startTime',['../classTrajectoryCollection_1_1CubicInterpolator.html#ab36a1aa7c19e5290b6df33510c08b36e',1,'TrajectoryCollection::CubicInterpolator']]]
+  ['setdomainlowerlimit_94',['setDomainLowerLimit',['../classTrajColl_1_1PiecewiseFunc.html#ac289e0ffbb0cfee101baf74649a62991',1,'TrajColl::PiecewiseFunc']]],
+  ['starttime_95',['startTime',['../classTrajColl_1_1CubicInterpolator.html#a37f01ce802eadf1c9fdd13d4d0bc4529',1,'TrajColl::CubicInterpolator']]]
 ];
