@@ -1,22 +1,22 @@
-add_library(TrajectoryCollection INTERFACE)
-target_link_libraries(TrajectoryCollection INTERFACE SpaceVecAlg::SpaceVecAlg)
+add_library(TrajColl INTERFACE)
+target_link_libraries(TrajColl INTERFACE SpaceVecAlg::SpaceVecAlg)
 if(DEFINED CATKIN_DEVEL_PREFIX)
-  target_link_libraries(TrajectoryCollection INTERFACE ${catkin_LIBRARIES})
+  target_link_libraries(TrajColl INTERFACE ${catkin_LIBRARIES})
 endif()
-target_include_directories(TrajectoryCollection INTERFACE
+target_include_directories(TrajColl INTERFACE
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
 )
-target_compile_features(TrajectoryCollection INTERFACE cxx_std_17)
+target_compile_features(TrajColl INTERFACE cxx_std_17)
 
 if(BUILD_SHARED_LIBS)
-  set_target_properties(TrajectoryCollection PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR} VERSION ${PROJECT_VERSION})
+  set_target_properties(TrajColl PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR} VERSION ${PROJECT_VERSION})
 endif()
 
-install(TARGETS TrajectoryCollection
+install(TARGETS TrajColl
   EXPORT "${TARGETS_EXPORT_NAME}"
   LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/TrajectoryCollection DESTINATION "${INCLUDE_INSTALL_DIR}")
+install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/TrajColl DESTINATION "${INCLUDE_INSTALL_DIR}")

@@ -2,9 +2,9 @@
 
 #include <Eigen/Core>
 
-#include <TrajectoryCollection/Func.h>
+#include <TrajColl/Func.h>
 
-namespace TrajectoryCollection
+namespace TrajColl
 {
 /** \brief Cubic Hermite spline.
     \tparam T function value type
@@ -244,4 +244,4 @@ protected:
   //! Times, positions, and velocities in way points
   std::map<double, std::pair<T, T>> points_;
 };
-} // namespace TrajectoryCollection
+} // namespace TrajColl

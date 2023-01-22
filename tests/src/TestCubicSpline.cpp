@@ -4,7 +4,7 @@
 
 #include <Eigen/Core>
 
-#include <TrajectoryCollection/CubicSpline.h>
+#include <TrajColl/CubicSpline.h>
 
 TEST(TestCubicSpline, Test1)
 {
@@ -17,13 +17,9 @@ TEST(TestCubicSpline, Test1)
   Eigen::Vector3d end_accel(-5, 100, 0);
 
   // setup spline
-  TrajectoryCollection::CubicSpline<Eigen::Vector3d> sp(
-      3,
-      TrajectoryCollection::BoundaryConstraint<Eigen::Vector3d>(TrajectoryCollection::BoundaryConstraintType::Velocity,
-                                                                start_vel),
-      TrajectoryCollection::BoundaryConstraint<Eigen::Vector3d>(
-          TrajectoryCollection::BoundaryConstraintType::Acceleration, end_accel),
-      points);
+  TrajColl::CubicSpline<Eigen::Vector3d> sp(
+      3, TrajColl::BoundaryConstraint<Eigen::Vector3d>(TrajColl::BoundaryConstraintType::Velocity, start_vel),
+      TrajColl::BoundaryConstraint<Eigen::Vector3d>(TrajColl::BoundaryConstraintType::Acceleration, end_accel), points);
   sp.calcCoeff();
 
   // check position of waypoints

@@ -4,8 +4,8 @@
 
 #include <Eigen/Core>
 
-#include <TrajectoryCollection/CubicHermiteSpline.h>
-#include <TrajectoryCollection/CubicSpline.h>
+#include <TrajColl/CubicHermiteSpline.h>
+#include <TrajColl/CubicSpline.h>
 
 TEST(TestCubicHermiteSpline, CubicHermiteSpline)
 {
@@ -17,7 +17,7 @@ TEST(TestCubicHermiteSpline, CubicHermiteSpline)
       {20, {Eigen::Vector3d(5, 0, 1), Eigen::Vector3d(-2, 1, 0)}}};
 
   // setup spline
-  TrajectoryCollection::CubicHermiteSpline<Eigen::Vector3d> sp(3, points);
+  TrajColl::CubicHermiteSpline<Eigen::Vector3d> sp(3, points);
   sp.calcCoeff();
 
   // check position of waypoints
@@ -54,16 +54,13 @@ TEST(TestCubicHermiteSpline, CompareCubicSplineAndCubicHermiteSpline)
     Eigen::Vector3d start_vel = Eigen::Vector3d::Random();
     Eigen::Vector3d end_vel = Eigen::Vector3d::Random();
 
-    TrajectoryCollection::CubicSpline<Eigen::Vector3d> cubicSpline(
-        3,
-        TrajectoryCollection::BoundaryConstraint<Eigen::Vector3d>(
-            TrajectoryCollection::BoundaryConstraintType::Velocity, start_vel),
-        TrajectoryCollection::BoundaryConstraint<Eigen::Vector3d>(
-            TrajectoryCollection::BoundaryConstraintType::Velocity, end_vel),
+    TrajColl::CubicSpline<Eigen::Vector3d> cubicSpline(
+        3, TrajColl::BoundaryConstraint<Eigen::Vector3d>(TrajColl::BoundaryConstraintType::Velocity, start_vel),
+        TrajColl::BoundaryConstraint<Eigen::Vector3d>(TrajColl::BoundaryConstraintType::Velocity, end_vel),
         std::map<double, Eigen::Vector3d>{{start_time, start_pos}, {end_time, end_pos}});
     cubicSpline.calcCoeff();
 
-    TrajectoryCollection::CubicHermiteSpline<Eigen::Vector3d> cubicHermiteSpline(
+    TrajColl::CubicHermiteSpline<Eigen::Vector3d> cubicHermiteSpline(
         3, std::map<double, std::pair<Eigen::Vector3d, Eigen::Vector3d>>{{start_time, {start_pos, start_vel}},
                                                                          {end_time, {end_pos, end_vel}}});
     cubicHermiteSpline.calcCoeff();
@@ -92,7 +89,7 @@ TEST(TestCubicHermiteSpline, CubicHermiteSplineMonotone)
       {30, {Eigen::Vector3d(6, 0, 1), Eigen::Vector3d::Zero()}}};
 
   // setup spline
-  TrajectoryCollection::CubicHermiteSpline<Eigen::Vector3d> sp(3, points);
+  TrajColl::CubicHermiteSpline<Eigen::Vector3d> sp(3, points);
   sp.calcMonotoneVelocity(false, false);
   sp.calcCoeff();
 

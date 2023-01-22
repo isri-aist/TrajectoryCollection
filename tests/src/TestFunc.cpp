@@ -4,19 +4,19 @@
 
 #include <Eigen/Core>
 
-#include <TrajectoryCollection/Func.h>
+#include <TrajColl/Func.h>
 
 TEST(TestFunc, PiecewiseFunc)
 {
-  std::vector<std::pair<double, std::shared_ptr<TrajectoryCollection::Func<Eigen::Vector3d>>>> funcs = {
-      {0, std::make_shared<TrajectoryCollection::LinearPolynomial<Eigen::Vector3d>>(
+  std::vector<std::pair<double, std::shared_ptr<TrajColl::Func<Eigen::Vector3d>>>> funcs = {
+      {0, std::make_shared<TrajColl::LinearPolynomial<Eigen::Vector3d>>(
               std::array<Eigen::Vector3d, 2>{Eigen::Vector3d(1, -2, 3), Eigen::Vector3d(-11, 12, -13)})},
-      {1, std::make_shared<TrajectoryCollection::QuadraticPolynomial<Eigen::Vector3d>>(std::array<Eigen::Vector3d, 3>{
+      {1, std::make_shared<TrajColl::QuadraticPolynomial<Eigen::Vector3d>>(std::array<Eigen::Vector3d, 3>{
               Eigen::Vector3d(4, -5, 6), Eigen::Vector3d(-14, 15, -16), Eigen::Vector3d(104, 105, 106)})},
-      {5, std::make_shared<TrajectoryCollection::Constant<Eigen::Vector3d>>(Eigen::Vector3d(7, -8, 9))}};
+      {5, std::make_shared<TrajColl::Constant<Eigen::Vector3d>>(Eigen::Vector3d(7, -8, 9))}};
 
   // setup piecewise function
-  TrajectoryCollection::PiecewiseFunc<Eigen::Vector3d> piecewise_func;
+  TrajColl::PiecewiseFunc<Eigen::Vector3d> piecewise_func;
   for(const auto & func : funcs)
   {
     piecewise_func.appendFunc(func.first, func.second);
@@ -46,7 +46,7 @@ TEST(TestFunc, Polynomial)
                                            Eigen::Vector3d(10, 11, 12), Eigen::Vector3d(13, 14, 15)};
 
   // setup polynomial function
-  TrajectoryCollection::Polynomial<Eigen::Vector3d, 4> poly_func(coeffs);
+  TrajColl::Polynomial<Eigen::Vector3d, 4> poly_func(coeffs);
 
   // check function value and derivatives
   for(double t = -10; t < 10; t += 0.1)

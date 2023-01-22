@@ -8,7 +8,7 @@
 #include <memory>
 #include <vector>
 
-namespace TrajectoryCollection
+namespace TrajColl
 {
 /** \brief Mathematical function.
     \tparam T function value type
@@ -251,4 +251,4 @@ using QuadraticPolynomial = Polynomial<T, 2>;
 /** \brief Cubic polynomial function. */
 template<class T>
 using CubicPolynomial = Polynomial<T, 3>;
-} // namespace TrajectoryCollection
+} // namespace TrajColl

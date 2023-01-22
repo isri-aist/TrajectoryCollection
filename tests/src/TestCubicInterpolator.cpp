@@ -4,7 +4,7 @@
 
 #include <Eigen/Core>
 
-#include <TrajectoryCollection/CubicInterpolator.h>
+#include <TrajColl/CubicInterpolator.h>
 
 TEST(TestCubicInterpolator, Test1)
 {
@@ -15,7 +15,7 @@ TEST(TestCubicInterpolator, Test1)
                                               {100, Eigen::Vector3d(4, -100, 123)}};
 
   // setup interpolator
-  TrajectoryCollection::CubicInterpolator<Eigen::Vector3d> interp(points);
+  TrajColl::CubicInterpolator<Eigen::Vector3d> interp(points);
 
   // check for the sampled points of each section
   for(size_t i = 0; i < points.size() - 1; i++)
@@ -50,8 +50,8 @@ TEST(TestCubicInterpolator, CompareCubicHermiteSplineAndCubicInterpolator)
   for(int i = 0; i < 100; i++)
   {
     std::vector<double> t_list = {0.0, 1.0, 2.0, 5.0};
-    TrajectoryCollection::CubicHermiteSpline<Eigen::Vector3d> cubicHermiteSpline(3);
-    TrajectoryCollection::CubicInterpolator<Eigen::Vector3d> cubicInterp;
+    TrajColl::CubicHermiteSpline<Eigen::Vector3d> cubicHermiteSpline(3);
+    TrajColl::CubicInterpolator<Eigen::Vector3d> cubicInterp;
     for(size_t j = 0; j < t_list.size(); j++)
     {
       Eigen::Vector3d pos = Eigen::Vector3d::Random();

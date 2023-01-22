@@ -2,9 +2,9 @@
 
 #include <Eigen/Core>
 
-#include <TrajectoryCollection/Func.h>
+#include <TrajColl/Func.h>
 
-namespace TrajectoryCollection
+namespace TrajColl
 {
 /** \brief Type of boundary constraint. */
 enum class BoundaryConstraintType
@@ -221,4 +221,4 @@ protected:
   //! Way points
   std::map<double, T> points_;
 };
-} // namespace TrajectoryCollection
+} // namespace TrajColl
