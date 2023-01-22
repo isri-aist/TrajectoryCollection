@@ -9,10 +9,6 @@ target_include_directories(TrajColl INTERFACE
 )
 target_compile_features(TrajColl INTERFACE cxx_std_17)
 
-if(BUILD_SHARED_LIBS)
-  set_target_properties(TrajColl PROPERTIES SOVERSION ${PROJECT_VERSION_MAJOR} VERSION ${PROJECT_VERSION})
-endif()
-
 install(TARGETS TrajColl
   EXPORT "${TARGETS_EXPORT_NAME}"
   LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
