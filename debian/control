@@ -1,0 +1,22 @@
+Source: trajectorycollection
+Priority: optional
+Maintainer: Pierre Gergondet <pierre.gergondet+ppa@gmail.com>
+Standards-Version: 3.9.5
+Section: libs
+Homepage: https://github.com/isri-aist/trajectoryCollection
+Build-Depends: debhelper (>= 9),
+               pkg-config,
+               cmake,
+               doxygen,
+               graphviz,
+               libspacevecalg-dev,
+               libgtest-dev
+
+Package: libtrajectorycollection-dev
+Section: libdevel
+Architecture: any
+Depends: cmake,
+         libspacevecalg-dev,
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Trajectory functions for robot control
