@@ -19,6 +19,6 @@ This package depends on
 - [Polynomial function](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1Polynomial.html#details)
 - [Cubic spline](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicSpline.html#details)
 - [Cubic Hermite spline](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicHermiteSpline.html#details)
-  - Supports [monotone cubic interpolation](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicHermiteSpline.html#a16e338fa43dfa5abc78b3103a7bf28db).
+  - Supports [monotone cubic interpolation](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicHermiteSpline.html#a16e338fa43dfa5abc78b3103a7bf28db)
 - [Piecewise function](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1PiecewiseFunc.html#details) consisting of the above functions
 - [Point-to-point cubic interpolation](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicInterpolator.html#details) for various types
