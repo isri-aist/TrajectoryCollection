@@ -20,5 +20,5 @@ This package depends on
 - [Cubic spline](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicSpline.html#details)
 - [Cubic Hermite spline](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicHermiteSpline.html#details)
   - Supports [monotone cubic interpolation](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicHermiteSpline.html#a16e338fa43dfa5abc78b3103a7bf28db).
-- [Piecewise function consisting of the above functions](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1PiecewiseFunc.html#details)
-- [Point-to-point cubic interpolation for various types](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicInterpolator.html#details)
+- [Piecewise function](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1PiecewiseFunc.html#details) consisting of the above functions
+- [Point-to-point cubic interpolation](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicInterpolator.html#details) for various types
