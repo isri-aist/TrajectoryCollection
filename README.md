@@ -14,3 +14,11 @@ Trajectory functions for robot control
 ### Dependencies
 This package depends on
 - [SpaceVecAlg](https://github.com/jrl-umi3218/SpaceVecAlg)
+
+## Trajectory list
+- [Polynomial function](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1Polynomial.html#details)
+- [Cubic spline](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicSpline.html#details)
+- [Cubic Hermite spline](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicHermiteSpline.html#details)
+  - Supports [monotone cubic interpolation](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicHermiteSpline.html#a16e338fa43dfa5abc78b3103a7bf28db).
+- [Piecewise function consisting of the above functions](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1PiecewiseFunc.html#details)
+- [Point-to-point cubic interpolation for various types](https://isri-aist.github.io/TrajectoryCollection/doxygen/classTrajColl_1_1CubicInterpolator.html#details)
