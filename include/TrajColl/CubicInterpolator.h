@@ -167,6 +167,28 @@ inline sva::MotionVecd interpolateDerivative(const sva::PTransformd & start,
   }
 }
 
+/** \brief Calculate the derivative of wrench interpolating from start to end.
+    \param start start value
+    \param end end value
+    \param ratio interpolation ratio
+    \param order derivative order
+*/
+template<>
+inline sva::ForceVecd interpolateDerivative(const sva::ForceVecd & start,
+                                            const sva::ForceVecd & end,
+                                            double, // ratio
+                                            int order)
+{
+  if(order == 1)
+  {
+    return end - start;
+  }
+  else
+  {
+    return sva::ForceVecd::Zero();
+  }
+}
+
 /** \brief Cubic interpolator.
     \tparam T value type
     \tparam U derivative type
