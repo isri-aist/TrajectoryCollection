@@ -13,7 +13,7 @@ namespace TrajColl
     The velocity of each waypoint is assumed to be zero.
 */
 template<class T, class U = T>
-class BangBangInterpolator : Interpolator<T, U>
+class BangBangInterpolator : public Interpolator<T, U>
 {
 public:
   /** \brief Constructor.
@@ -45,6 +45,13 @@ public:
     func_ = std::make_shared<PiecewiseFunc<double>>(*inst.func_);
   }
 
+  /** \brief Clear points. */
+  virtual void clearPoints() override
+  {
+    Interpolator<T, U>::clearPoints();
+    accelDurationList_.clear();
+  }
+
   /** \brief Add point.
       \param point time and value
 
@@ -57,7 +64,7 @@ public:
 
   /** \brief Add point.
       \param point time and value
-      \param accelDuration acceleration/deceleration duration
+      \param accelDuration acceleration/deceleration duration (automatically determined if zero is specified)
 
       \note BangBangInterpolator::calcCoeff should be called before calling BangBangInterpolator::operator().
   */

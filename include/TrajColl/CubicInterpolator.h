@@ -13,7 +13,7 @@ namespace TrajColl
     The velocity of each waypoint is assumed to be zero.
 */
 template<class T, class U = T>
-class CubicInterpolator : Interpolator<T, U>
+class CubicInterpolator : public Interpolator<T, U>
 {
 protected:
   //! 1D vector

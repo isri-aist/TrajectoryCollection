@@ -27,7 +27,7 @@ public:
   }
 
   /** \brief Clear points. */
-  void clearPoints()
+  virtual void clearPoints()
   {
     points_.clear();
   }
