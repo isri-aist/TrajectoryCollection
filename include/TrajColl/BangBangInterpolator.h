@@ -2,6 +2,7 @@
 
 #include <TrajColl/ElementInterpolation.h>
 #include <TrajColl/Func.h>
+#include <TrajColl/Interpolator.h>
 
 namespace TrajColl
 {
@@ -12,7 +13,7 @@ namespace TrajColl
     The velocity of each waypoint is assumed to be zero.
 */
 template<class T, class U = T>
-class BangBangInterpolator
+class BangBangInterpolator : Interpolator<T, U>
 {
 public:
   /** \brief Constructor.
@@ -20,58 +21,61 @@ public:
       \param accelDurationList list of acceleration/deceleration duration
   */
   BangBangInterpolator(const std::map<double, T> & points = {}, const std::vector<double> & accelDurationList = {})
-  : points_(points), accelDurationList_(accelDurationList)
+  : Interpolator<T, U>(points), accelDurationList_(accelDurationList)
   {
     func_ = std::make_shared<PiecewiseFunc<double>>();
 
-    if(accelDurationList_.size() > 0 && (points_.size() != accelDurationList_.size() + 1))
+    if(accelDurationList_.size() > 0 && (this->points_.size() != accelDurationList_.size() + 1))
     {
       throw std::invalid_argument(
           "[BangBangInterpolator] The size of the accelDurationList must be one less than the size of the points: "
-          + std::to_string(accelDurationList_.size()) + " != " + std::to_string(points_.size()) + " + 1");
+          + std::to_string(accelDurationList_.size()) + " != " + std::to_string(this->points_.size()) + " + 1");
     }
 
-    if(points_.size() >= 2)
+    if(this->points_.size() >= 2)
     {
       calcCoeff();
     }
   }
 
   /** \brief Copy constructor. */
-  BangBangInterpolator(const BangBangInterpolator & inst)
+  BangBangInterpolator(const BangBangInterpolator & inst) : Interpolator<T, U>(inst)
   {
-    points_ = inst.points_;
     accelDurationList_ = inst.accelDurationList_;
     func_ = std::make_shared<PiecewiseFunc<double>>(*inst.func_);
   }
 
-  /** \brief Clear points. */
-  void clearPoints()
+  /** \brief Add point.
+      \param point time and value
+
+      \note BangBangInterpolator::calcCoeff should be called before calling BangBangInterpolator::operator().
+  */
+  virtual void appendPoint(const std::pair<double, T> & point) override
   {
-    points_.clear();
-    accelDurationList_.clear();
+    appendPoint(point, 0.0);
   }
 
   /** \brief Add point.
       \param point time and value
-      \param accelDuration acceleration/deceleration duration (automatically set if zero)
+      \param accelDuration acceleration/deceleration duration
 
       \note BangBangInterpolator::calcCoeff should be called before calling BangBangInterpolator::operator().
   */
-  void appendPoint(const std::pair<double, T> & point, double accelDuration = 0.0)
+  void appendPoint(const std::pair<double, T> & point, double accelDuration)
   {
-    if(!points_.empty() && point.first <= points_.rbegin()->first)
+    if(!this->points_.empty() && point.first <= this->points_.rbegin()->first)
     {
       throw std::invalid_argument("[BangBangInterpolator] Only adding a trailing point is allowed: "
-                                  + std::to_string(point.first) + " <= " + std::to_string(points_.rbegin()->first));
+                                  + std::to_string(point.first)
+                                  + " <= " + std::to_string(this->points_.rbegin()->first));
     }
 
-    points_.insert(point);
+    this->points_.insert(point);
 
     // Set accelDurationList_
-    if(points_.size() >= 2)
+    if(this->points_.size() >= 2)
     {
-      double interpDuration = points_.rbegin()->first - std::next(points_.rbegin())->first;
+      double interpDuration = this->points_.rbegin()->first - std::next(this->points_.rbegin())->first;
 
       if(accelDuration <= 0.0)
       {
@@ -90,18 +94,18 @@ public:
   }
 
   /** \brief Calculate coefficients. */
-  void calcCoeff()
+  virtual void calcCoeff() override
   {
-    if(points_.size() < 2)
+    if(this->points_.size() < 2)
     {
       throw std::out_of_range("[BangBangInterpolator] Number of points should be 2 or more: "
-                              + std::to_string(points_.size()));
+                              + std::to_string(this->points_.size()));
     }
 
     func_->clearFuncs();
 
-    auto pointIt = points_.begin();
-    for(int i = 0; i < static_cast<int>(points_.size()) - 1; i++, pointIt++)
+    auto pointIt = this->points_.begin();
+    for(int i = 0; i < static_cast<int>(this->points_.size()) - 1; i++, pointIt++)
     {
       double segStartTime = pointIt->first;
       double segEndTime = std::next(pointIt)->first;
@@ -126,18 +130,18 @@ public:
       func_->appendFunc(segEndTime, segFunc);
     }
 
-    func_->setDomainLowerLimit(startTime());
+    func_->setDomainLowerLimit(this->points_.begin()->first);
   }
 
   /** \brief Calculate interpolated value.
       \param t time
   */
-  T operator()(double t) const
+  virtual T operator()(double t) const override
   {
     size_t idx = func_->index(t);
     double ratio = (*func_)(t) - static_cast<double>(idx);
-    return interpolate<T>(std::next(points_.begin(), idx)->second, std::next(points_.begin(), idx + 1)->second,
-                          std::clamp(ratio, 0.0, 1.0));
+    return interpolate<T>(std::next(this->points_.begin(), idx)->second,
+                          std::next(this->points_.begin(), idx + 1)->second, std::clamp(ratio, 0.0, 1.0));
   }
 
   /** \brief Calculate the derivative of interpolated value.
@@ -146,37 +150,17 @@ public:
 
       It is assumed that interpolateDerivative() returns zero if derivative order is greater than or equal to 2.
   */
-  virtual U derivative(double t, int order = 1) const
+  virtual U derivative(double t, int order = 1) const override
   {
     size_t idx = func_->index(t);
     double ratio = (*func_)(t) - static_cast<double>(idx);
     return func_->derivative(t, order)
-           * interpolateDerivative<T, U>(std::next(points_.begin(), idx)->second,
-                                         std::next(points_.begin(), idx + 1)->second, std::clamp(ratio, 0.0, 1.0), 1);
-  }
-
-  /** \brief Get start time. */
-  double startTime() const
-  {
-    return points_.begin()->first;
-  }
-
-  /** \brief Get end time. */
-  double endTime() const
-  {
-    return points_.rbegin()->first;
-  }
-
-  /** \brief Get points. */
-  const std::map<double, T> & points() const
-  {
-    return points_;
+           * interpolateDerivative<T, U>(std::next(this->points_.begin(), idx)->second,
+                                         std::next(this->points_.begin(), idx + 1)->second, std::clamp(ratio, 0.0, 1.0),
+                                         1);
   }
 
 protected:
-  //! Times and values to be interpolated
-  std::map<double, T> points_;
-
   //! List of acceleration/deceleration duration
   std::vector<double> accelDurationList_;
 

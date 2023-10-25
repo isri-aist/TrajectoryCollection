@@ -2,6 +2,7 @@
 
 #include <TrajColl/CubicHermiteSpline.h>
 #include <TrajColl/ElementInterpolation.h>
+#include <TrajColl/Interpolator.h>
 
 namespace TrajColl
 {
@@ -12,7 +13,7 @@ namespace TrajColl
     The velocity of each waypoint is assumed to be zero.
 */
 template<class T, class U = T>
-class CubicInterpolator
+class CubicInterpolator : Interpolator<T, U>
 {
 protected:
   //! 1D vector
@@ -22,27 +23,20 @@ public:
   /** \brief Constructor.
       \param points times and values to be interpolated
   */
-  CubicInterpolator(const std::map<double, T> & points = {}) : points_(points)
+  CubicInterpolator(const std::map<double, T> & points = {}) : Interpolator<T, U>(points)
   {
     func_ = std::make_shared<CubicHermiteSpline<Vector1d>>(1, std::map<double, std::pair<Vector1d, Vector1d>>{});
 
-    if(points_.size() >= 2)
+    if(this->points_.size() >= 2)
     {
       calcCoeff();
     }
   }
 
   /** \brief Copy constructor. */
-  CubicInterpolator(const CubicInterpolator & inst)
+  CubicInterpolator(const CubicInterpolator & inst) : Interpolator<T, U>(inst)
   {
-    points_ = inst.points_;
     func_ = std::make_shared<CubicHermiteSpline<Vector1d>>(*inst.func_);
-  }
-
-  /** \brief Clear points. */
-  void clearPoints()
-  {
-    points_.clear();
   }
 
   /** \brief Add point.
@@ -50,43 +44,43 @@ public:
 
       \note CubicInterpolator::calcCoeff should be called before calling CubicInterpolator::operator().
   */
-  void appendPoint(const std::pair<double, T> & point)
+  virtual void appendPoint(const std::pair<double, T> & point) override
   {
-    points_.insert(point);
+    this->points_.insert(point);
   }
 
   /** \brief Calculate coefficients. */
-  void calcCoeff()
+  virtual void calcCoeff() override
   {
-    if(points_.size() < 2)
+    if(this->points_.size() < 2)
     {
       throw std::out_of_range("[CubicInterpolator] Number of points should be 2 or more: "
-                              + std::to_string(points_.size()));
+                              + std::to_string(this->points_.size()));
     }
 
     func_->clearPoints();
 
-    auto it = points_.begin();
-    for(size_t i = 0; i < points_.size(); i++)
+    auto it = this->points_.begin();
+    for(size_t i = 0; i < this->points_.size(); i++)
     {
       func_->appendPoint(std::make_pair(
           it->first, std::make_pair((Vector1d() << static_cast<double>(i)).finished(), Vector1d::Zero())));
       it++;
     }
 
-    func_->setDomainLowerLimit(startTime());
+    func_->setDomainLowerLimit(this->points_.begin()->first);
     func_->calcCoeff();
   }
 
   /** \brief Calculate interpolated value.
       \param t time
   */
-  T operator()(double t) const
+  virtual T operator()(double t) const override
   {
     size_t idx = func_->index(t);
     double ratio = (*func_)(t)[0] - static_cast<double>(idx);
-    return interpolate<T>(std::next(points_.begin(), idx)->second, std::next(points_.begin(), idx + 1)->second,
-                          std::clamp(ratio, 0.0, 1.0));
+    return interpolate<T>(std::next(this->points_.begin(), idx)->second,
+                          std::next(this->points_.begin(), idx + 1)->second, std::clamp(ratio, 0.0, 1.0));
   }
 
   /** \brief Calculate the derivative of interpolated value.
@@ -95,37 +89,17 @@ public:
 
       It is assumed that interpolateDerivative() returns zero if derivative order is greater than or equal to 2.
   */
-  virtual U derivative(double t, int order = 1) const
+  virtual U derivative(double t, int order = 1) const override
   {
     size_t idx = func_->index(t);
     double ratio = (*func_)(t)[0] - static_cast<double>(idx);
     return func_->derivative(t, order)[0]
-           * interpolateDerivative<T, U>(std::next(points_.begin(), idx)->second,
-                                         std::next(points_.begin(), idx + 1)->second, std::clamp(ratio, 0.0, 1.0), 1);
-  }
-
-  /** \brief Get start time. */
-  double startTime() const
-  {
-    return points_.begin()->first;
-  }
-
-  /** \brief Get end time. */
-  double endTime() const
-  {
-    return points_.rbegin()->first;
-  }
-
-  /** \brief Get points. */
-  const std::map<double, T> & points() const
-  {
-    return points_;
+           * interpolateDerivative<T, U>(std::next(this->points_.begin(), idx)->second,
+                                         std::next(this->points_.begin(), idx + 1)->second, std::clamp(ratio, 0.0, 1.0),
+                                         1);
   }
 
 protected:
-  //! Times and values to be interpolated
-  std::map<double, T> points_;
-
   //! Function to calculate the ratio of interpolation points
   std::shared_ptr<CubicHermiteSpline<Vector1d>> func_;
 };
