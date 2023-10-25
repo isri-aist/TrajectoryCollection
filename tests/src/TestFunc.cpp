@@ -70,6 +70,20 @@ TEST(TestFunc, Polynomial)
   }
 }
 
+TEST(TestFunc, DerivativeDynamicSize)
+{
+  constexpr int size = 11;
+  std::array<Eigen::VectorXd, 3> coeffs = {Eigen::VectorXd::Random(size), Eigen::VectorXd::Random(size),
+                                           Eigen::VectorXd::Random(size)};
+  TrajColl::Polynomial<Eigen::VectorXd, 2> poly_func(coeffs);
+
+  for(int order = 0; order < 9; order++)
+  {
+    Eigen::VectorXd deriv = poly_func.derivative(0.0, order);
+    EXPECT_TRUE(deriv.size() == size);
+  }
+}
+
 int main(int argc, char ** argv)
 {
   testing::InitGoogleTest(&argc, argv);

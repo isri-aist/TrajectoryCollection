@@ -187,9 +187,16 @@ public:
   {
     if(derivativeOrder > Order)
     {
-      T ret = coeff_[0]; // Dummy initialization for dynamic size class
-      ret.setZero();
-      return ret;
+      if constexpr(std::is_scalar_v<T>)
+      {
+        return T(0);
+      }
+      else
+      {
+        T ret = coeff_[0]; // Dummy initialization for dynamic size class
+        ret.setZero();
+        return ret;
+      }
     }
 
     T ret = coeff_[derivativeOrder];
