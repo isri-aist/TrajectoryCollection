@@ -1,5 +1,7 @@
 /* Author: Masaki Murooka */
 
+#include <fstream>
+
 #include <gtest/gtest.h>
 
 #include <Eigen/Core>
@@ -42,6 +44,27 @@ TEST(TestCubicInterpolator, Test1)
     Eigen::Vector3d v = interp.derivative(t0, 1);
     EXPECT_TRUE((x - x0).norm() < 1e-10);
     EXPECT_TRUE(v.norm() < 1e-10);
+  }
+
+  // output file
+  {
+    double t_start = points.begin()->first;
+    double t_end = points.rbegin()->first;
+    double t = t_start;
+    bool break_flag = false;
+    std::ofstream ofs("/tmp/TestCubicInterpolator.txt");
+    do
+    {
+      if(t >= t_end)
+      {
+        t = std::min(t, t_end);
+        break_flag = true;
+      }
+
+      ofs << t << " " << interp(t).transpose() << std::endl;
+
+      t += 0.01;
+    } while(!break_flag);
   }
 }
 
