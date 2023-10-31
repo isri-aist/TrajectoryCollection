@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['func_5f_100',['func_',['../classTrajColl_1_1CubicInterpolator.html#a76fc75985a827683bbc97aa824bee6c2',1,'TrajColl::CubicInterpolator']]],
-  ['funcs_5f_101',['funcs_',['../classTrajColl_1_1PiecewiseFunc.html#acfafccc9699a1ca39dee9fa8f902c9d1',1,'TrajColl::PiecewiseFunc']]]
+  ['dim_5f_115',['dim_',['../classTrajColl_1_1CubicHermiteSpline.html#ae2a731adf2ae2ef6d1a455c67bc5f3b0',1,'TrajColl::CubicHermiteSpline::dim_()'],['../classTrajColl_1_1CubicSpline.html#a353a8abfbea3366f7ab5aa741ee72d5b',1,'TrajColl::CubicSpline::dim_()']]]
 ];

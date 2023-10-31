@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['t0_5f_103',['t0_',['../classTrajColl_1_1Polynomial.html#a8baa3059a9f733edef5c7bfc872242d8',1,'TrajColl::Polynomial']]],
-  ['tlowerlimit_5f_104',['tLowerLimit_',['../classTrajColl_1_1PiecewiseFunc.html#a05bba859efd92cf9980306405a0fa928',1,'TrajColl::PiecewiseFunc']]],
-  ['type_105',['type',['../structTrajColl_1_1BoundaryConstraint.html#a67417a95537203f3f617bafda71f0cff',1,'TrajColl::BoundaryConstraint']]]
+  ['points_5f_118',['points_',['../classTrajColl_1_1CubicHermiteSpline.html#a13897240dbf19d97bd46dc404683e645',1,'TrajColl::CubicHermiteSpline::points_()'],['../classTrajColl_1_1CubicSpline.html#aeb0fd516139e4acc8eb4f465cf20c50b',1,'TrajColl::CubicSpline::points_()'],['../classTrajColl_1_1Interpolator.html#acf90c6a05af37f3c71277ef4b57a2eb2',1,'TrajColl::Interpolator::points_()']]]
 ];

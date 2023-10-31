@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['coeff_5f_98',['coeff_',['../classTrajColl_1_1Polynomial.html#a063fcac3cfc76fd336ef62abef666937',1,'TrajColl::Polynomial']]]
+  ['bcend_5f_112',['bcEnd_',['../classTrajColl_1_1CubicSpline.html#a7f15253059e87b906782a155f0e3e715',1,'TrajColl::CubicSpline']]],
+  ['bcstart_5f_113',['bcStart_',['../classTrajColl_1_1CubicSpline.html#acf5f672136103e39f8bb5310c460a833',1,'TrajColl::CubicSpline']]]
 ];

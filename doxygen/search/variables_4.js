@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['points_5f_102',['points_',['../classTrajColl_1_1CubicHermiteSpline.html#a13897240dbf19d97bd46dc404683e645',1,'TrajColl::CubicHermiteSpline::points_()'],['../classTrajColl_1_1CubicInterpolator.html#aff49759a2e7d9f05fd92fa7ec6b8b230',1,'TrajColl::CubicInterpolator::points_()'],['../classTrajColl_1_1CubicSpline.html#aeb0fd516139e4acc8eb4f465cf20c50b',1,'TrajColl::CubicSpline::points_()']]]
+  ['func_5f_116',['func_',['../classTrajColl_1_1BangBangInterpolator.html#a4cbabe665563691c425425d6296a04c6',1,'TrajColl::BangBangInterpolator::func_()'],['../classTrajColl_1_1CubicInterpolator.html#a76fc75985a827683bbc97aa824bee6c2',1,'TrajColl::CubicInterpolator::func_()']]],
+  ['funcs_5f_117',['funcs_',['../classTrajColl_1_1PiecewiseFunc.html#acfafccc9699a1ca39dee9fa8f902c9d1',1,'TrajColl::PiecewiseFunc']]]
 ];

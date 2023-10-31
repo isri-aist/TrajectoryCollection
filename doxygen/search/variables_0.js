@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['bcend_5f_96',['bcEnd_',['../classTrajColl_1_1CubicSpline.html#a7f15253059e87b906782a155f0e3e715',1,'TrajColl::CubicSpline']]],
-  ['bcstart_5f_97',['bcStart_',['../classTrajColl_1_1CubicSpline.html#acf5f672136103e39f8bb5310c460a833',1,'TrajColl::CubicSpline']]]
+  ['acceldurationlist_5f_111',['accelDurationList_',['../classTrajColl_1_1BangBangInterpolator.html#abae1d7bff57fbbd7b868ca5dfeda970e',1,'TrajColl::BangBangInterpolator']]]
 ];
