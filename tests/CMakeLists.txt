@@ -18,6 +18,7 @@ set(TrajColl_gtest_list
   TestCubicSpline
   TestCubicHermiteSpline
   TestCubicInterpolator
+  TestBangBangInterpolator
   )
 
 foreach(NAME IN LISTS TrajColl_gtest_list)
