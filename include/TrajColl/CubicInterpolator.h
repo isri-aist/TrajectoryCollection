@@ -39,6 +39,12 @@ public:
     func_ = std::make_shared<CubicHermiteSpline<Vector1d>>(*inst.func_);
   }
 
+  /** \brief Clone this instance and get shared pointer. */
+  virtual std::shared_ptr<Interpolator<T, U>> clone() const override
+  {
+    return std::shared_ptr<Interpolator<T, U>>(new CubicInterpolator(*this));
+  }
+
   /** \brief Add point.
       \param point time and value
 

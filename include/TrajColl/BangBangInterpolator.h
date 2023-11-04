@@ -45,6 +45,12 @@ public:
     func_ = std::make_shared<PiecewiseFunc<double>>(*inst.func_);
   }
 
+  /** \brief Clone this instance and get shared pointer. */
+  virtual std::shared_ptr<Interpolator<T, U>> clone() const override
+  {
+    return std::shared_ptr<Interpolator<T, U>>(new BangBangInterpolator(*this));
+  }
+
   /** \brief Clear points. */
   virtual void clearPoints() override
   {

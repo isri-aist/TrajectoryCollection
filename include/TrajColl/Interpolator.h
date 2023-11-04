@@ -26,6 +26,9 @@ public:
     points_ = inst.points_;
   }
 
+  /** \brief Clone this instance and get shared pointer. */
+  virtual std::shared_ptr<Interpolator<T, U>> clone() const = 0;
+
   /** \brief Clear points. */
   virtual void clearPoints()
   {
