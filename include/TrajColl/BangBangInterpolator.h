@@ -98,8 +98,11 @@ public:
 
       if(accelDuration >= 0.5 * interpDuration)
       {
-        throw std::invalid_argument("[BangBangInterpolator] accelDuration must be less than half of interpDuration: "
-                                    + std::to_string(accelDuration) + " >= " + std::to_string(0.5 * interpDuration));
+        std::cerr << "[BangBangInterpolator] Overwrite accelDuration because accelDuration must be less than half of "
+                     "interpDuration: "
+                  << std::to_string(accelDuration) << " >= " << std::to_string(0.5 * interpDuration) << std::endl;
+        constexpr double eps = 1e-10;
+        accelDuration = 0.5 * interpDuration - eps;
       }
 
       accelDurationList_.push_back(accelDuration);
