@@ -17,10 +17,10 @@ jobs:
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v2
-      - name: Install clang-format-10
+      - name: Install clang-format-14
         run: |
           sudo apt-get -qq update
-          sudo apt-get -qq install clang-format-10
+          sudo apt-get -qq install clang-format-14
       - name: Run clang-format-check
         run: |
           ./.clang-format-check.sh
