@@ -9,7 +9,7 @@ Trajectory functions for robot control
 
 ### Requirements
 - Compiler supporting C++17
-- Tested on `Ubuntu 20.04 / ROS Noetic` and `Ubuntu 18.04 / ROS Melodic`
+- Tested on `Ubuntu 22.04 / ROS Humble`, `Ubuntu 20.04 / ROS Noetic` and `Ubuntu 18.04 / ROS Melodic` 
 
 ### Dependencies
 This package depends on

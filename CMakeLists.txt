@@ -9,6 +9,7 @@ set(PROJECT_DESCRIPTION "")
 set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_USE_CMAKE_EXPORT TRUE)
 set(CXX_DISABLE_WERROR ON)
+set(USE_ROS2 OFF)
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 
 include(cmake/base.cmake)
@@ -17,7 +18,7 @@ project(trajectory_collection LANGUAGES CXX)
 # SpaceVecAlg
 add_project_dependency(SpaceVecAlg REQUIRED)
 
-if(DEFINED USE_ROS2)
+if(USE_ROS2)
   set(DOXYGEN_HTML_OUTPUT html)
 
   # Eigen
@@ -38,10 +39,10 @@ endif()
 
 add_subdirectory(include)
 
-# if(BUILD_TESTING)
-#   add_subdirectory(tests)
-# endif()
+if(BUILD_TESTING)
+  add_subdirectory(tests)
+endif()
 
-# if(INSTALL_DOCUMENTATION)
-#   add_subdirectory(doc)
-# endif()
+if(INSTALL_DOCUMENTATION)
+  add_subdirectory(doc)
+endif()

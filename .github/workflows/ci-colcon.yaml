@@ -53,6 +53,7 @@ jobs:
         uses: jrl-umi3218/github-actions/build-colcon-project@master
         with:
           build-type: ${{ matrix.build-type }}
+          cmake-args: -DUSE_ROS2=ON
           build-packages: trajectory_collection
           test-packages: trajectory_collection
       - name: Upload documentation
