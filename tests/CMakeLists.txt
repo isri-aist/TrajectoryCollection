@@ -1,4 +1,4 @@
-if(not USE_ROS2)
+if(NOT USE_ROS2)
   find_package(GTest REQUIRED)
   include(GoogleTest)
   function(add_TrajColl_test NAME)
