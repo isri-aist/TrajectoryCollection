@@ -1,7 +1,7 @@
 add_library(TrajColl INTERFACE)
 target_link_libraries(TrajColl INTERFACE SpaceVecAlg::SpaceVecAlg)
-if(DEFINED CATKIN_DEVEL_PREFIX)
-  target_link_libraries(TrajColl INTERFACE ${catkin_LIBRARIES})
+if(DEFINED USE_ROS2)
+  target_link_libraries(TrajColl INTERFACE ${ament_LIBRARIES})
 endif()
 target_include_directories(TrajColl INTERFACE
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
@@ -15,4 +15,4 @@ install(TARGETS TrajColl
   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"
   RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
 )
-install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/TrajColl DESTINATION "${INCLUDE_INSTALL_DIR}")
+# install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/TrajColl DESTINATION "${INCLUDE_INSTALL_DIR}")

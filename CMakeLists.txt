@@ -9,6 +9,7 @@ set(PROJECT_DESCRIPTION "")
 set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_USE_CMAKE_EXPORT TRUE)
 set(CXX_DISABLE_WERROR ON)
+option(USE_ROS2 "Use ROS2" OFF)
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 
 include(cmake/base.cmake)
@@ -17,35 +18,28 @@ project(trajectory_collection LANGUAGES CXX)
 # SpaceVecAlg
 add_project_dependency(SpaceVecAlg REQUIRED)
 
-if(DEFINED CATKIN_DEVEL_PREFIX)
+if(USE_ROS2)
   set(DOXYGEN_HTML_OUTPUT html)
-  find_package(catkin REQUIRED COMPONENTS
-    roscpp
-  )
 
   # Eigen
   find_package(Eigen3 REQUIRED)
   include_directories(${EIGEN3_INCLUDE_DIR})
 
-  catkin_package(
-    CATKIN_DEPENDS
-    roscpp
-    DEPENDS EIGEN3
-    INCLUDE_DIRS include
-    LIBRARIES
-  )
+  find_package(ament_cmake REQUIRED) 
 
-  include_directories(include ${catkin_INCLUDE_DIRS})
-  link_directories(${catkin_LIBRARY_DIRS})
+  include_directories(include ${ament_INCLUDE_DIRS})
+  link_directories(${ament_LIBRARY_DIRS})
+
+  ament_package()
 else()
   set(DOXYGEN_HTML_OUTPUT doxygen-html)
-  set(CATKIN_ENABLE_TESTING OFF)
+  set(BUILD_TESTING OFF)
   option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)
 endif()
 
 add_subdirectory(include)
 
-if(BUILD_TESTING OR CATKIN_ENABLE_TESTING)
+if(BUILD_TESTING)
   add_subdirectory(tests)
 endif()
 

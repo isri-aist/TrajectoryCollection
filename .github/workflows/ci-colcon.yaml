@@ -1,0 +1,80 @@
+name: CI of TrajectoryCollection (colcon)
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+
+  clang-format:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - name: Install clang-format-14
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get -qq install clang-format-14
+      - name: Run clang-format-check
+        run: |
+          ./.clang-format-check.sh
+
+  build-and-test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04]
+        build-type: [Debug, RelWithDebInfo]
+        mc-rtc-version: [head, stable]
+        exclude:
+          - build-type: Debug
+            mc-rtc-version: stable
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Install dependencies
+        uses: jrl-umi3218/github-actions/install-dependencies@master
+        with:
+          compiler: ${{ matrix.compiler }}
+          build-type: ${{ matrix.build-type }}
+          ubuntu: |
+            apt-mirrors:
+              mc-rtc:
+                cloudsmith: mc-rtc/${{ matrix.mc-rtc-version }}
+            apt: librbdyn-dev libspacevecalg-dev libgtest-dev doxygen graphviz
+          ros: |
+            apt: ros-base
+      - name: Colcon build
+        uses: jrl-umi3218/github-actions/build-colcon-project@master
+        with:
+          build-type: ${{ matrix.build-type }}
+          cmake-args: -DUSE_ROS2=ON
+          build-packages: trajectory_collection
+          test-packages: trajectory_collection
+      - name: Upload documentation
+        # Only run for one configuration and on origin master branch
+        if: matrix.os == 'ubuntu-22.04' && matrix.build-type == 'RelWithDebInfo' && matrix.mc-rtc-version == 'head' && github.repository_owner == 'isri-aist' && github.ref == 'refs/heads/master'
+        run: |
+          set -e
+          set -x
+          cd ${GITHUB_WORKSPACE}/colcon_ws/src/TrajectoryCollection
+          git config --global user.name "Masaki Murooka"
+          git config --global user.email "m-murooka@aist.go.jp"
+          git remote set-url origin "https://mmurooka:${{ secrets.CI_TOKEN }}@github.com/isri-aist/TrajectoryCollection"
+          git fetch --depth=1 origin gh-pages:gh-pages
+          git checkout --quiet gh-pages
+          rm -rf doxygen/ cmake/
+          cp -r ${GITHUB_WORKSPACE}/colcon_ws/build/trajectory_collection/doc/html/ doxygen
+          git add doxygen
+          git_status=`git status -s`
+          if test -n "$git_status"; then
+            git commit --quiet -m "Update Doxygen HTML files from commit ${{ github.sha }}"
+            git push origin gh-pages
+          else
+            echo "Github pages documentation is already up-to-date."
+          fi
