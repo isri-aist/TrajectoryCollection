@@ -1,3 +1,5 @@
+**This is the branch for ROS1.**
+
 # [TrajectoryCollection](https://github.com/isri-aist/TrajectoryCollection)
 Trajectory functions for robot control
 
