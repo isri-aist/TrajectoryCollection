@@ -1,3 +1,5 @@
+**This is the branch for ROS2; use [the ros1 branch](https://github.com/isri-aist/TrajectoryCollection/tree/ros1) for ROS1.**
+
 # [TrajectoryCollection](https://github.com/isri-aist/TrajectoryCollection)
 Trajectory functions for robot control
 
@@ -9,7 +11,7 @@ Trajectory functions for robot control
 
 ### Requirements
 - Compiler supporting C++17
-- Tested on `Ubuntu 22.04 / ROS Humble`, `Ubuntu 20.04 / ROS Noetic` and `Ubuntu 18.04 / ROS Melodic` 
+- Tested with `Ubuntu 22.04 / ROS Humble`
 
 ### Dependencies
 This package depends on
