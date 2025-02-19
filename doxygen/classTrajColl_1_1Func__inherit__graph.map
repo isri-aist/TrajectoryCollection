@@ -1,9 +1,9 @@
 <map id="TrajColl::Func&lt; T &gt;" name="TrajColl::Func&lt; T &gt;">
-<area shape="rect" id="node1" title="Mathematical function." alt="" coords="5,56,152,83"/>
-<area shape="rect" id="node2" href="$classTrajColl_1_1Polynomial.html" title=" " alt="" coords="231,5,380,32"/>
-<area shape="rect" id="node4" href="$classTrajColl_1_1PiecewiseFunc.html" title="Piecewise function." alt="" coords="200,56,411,83"/>
-<area shape="rect" id="node7" href="$classTrajColl_1_1Polynomial.html" title="Polynomial function." alt="" coords="211,107,400,133"/>
-<area shape="rect" id="node3" href="$classTrajColl_1_1Constant.html" title="Constant function." alt="" coords="494,5,669,32"/>
-<area shape="rect" id="node5" href="$classTrajColl_1_1CubicHermiteSpline.html" title="Cubic Hermite spline." alt="" coords="459,56,704,83"/>
-<area shape="rect" id="node6" href="$classTrajColl_1_1CubicSpline.html" title="Cubic spline." alt="" coords="485,107,677,133"/>
+<area shape="rect" id="node1" title="Mathematical function." alt="" coords="5,71,152,98"/>
+<area shape="rect" id="node2" href="$classTrajColl_1_1Polynomial.html" title=" " alt="" coords="230,5,381,47"/>
+<area shape="rect" id="node4" href="$classTrajColl_1_1PiecewiseFunc.html" title="Piecewise function." alt="" coords="200,71,411,98"/>
+<area shape="rect" id="node7" href="$classTrajColl_1_1Polynomial.html" title="Polynomial function." alt="" coords="230,123,381,164"/>
+<area shape="rect" id="node3" href="$classTrajColl_1_1Constant.html" title="Constant function." alt="" coords="494,13,669,39"/>
+<area shape="rect" id="node5" href="$classTrajColl_1_1CubicHermiteSpline.html" title="Cubic Hermite spline." alt="" coords="459,67,704,94"/>
+<area shape="rect" id="node6" href="$classTrajColl_1_1CubicSpline.html" title="Cubic spline." alt="" coords="485,118,677,145"/>
 </map>
