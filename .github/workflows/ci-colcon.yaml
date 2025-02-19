@@ -15,20 +15,6 @@ jobs:
   clang-format:
     runs-on: ubuntu-22.04
     steps:
-      - name: Setup environment variables
-        run: |
-          set -e
-          set -x
-          if [ "${{ matrix.os }}" == "ubuntu-22.04" ] && \
-             [ "${{ matrix.build-type }}" == "RelWithDebInfo" ] && \
-             [ "${{ github.repository_owner }}" == "isri-aist" ] && \
-             [ "${{ github.ref }}" == "refs/heads/master" ]
-          then
-            echo "UPLOAD_DOCUMENTATION=true" >> $GITHUB_ENV
-            sudo apt-get install -qq doxygen graphviz
-          else
-            echo "UPLOAD_DOCUMENTATION=false" >> $GITHUB_ENV
-          fi
       - name: Checkout repository code
         uses: actions/checkout@v2
       - name: Install clang-format-14
@@ -51,6 +37,21 @@ jobs:
             mc-rtc-version: stable
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Setup environment variables
+        run: |
+          set -e
+          set -x
+          if [ "${{ matrix.os }}" == "ubuntu-22.04" ] && \
+             [ "${{ matrix.build-type }}" == "RelWithDebInfo" ] && \
+             [ "${{ matrix.mc-rtc-version }}" == "head" ] && \
+             [ "${{ github.repository_owner }}" == "isri-aist" ] && \
+             [ "${{ github.ref }}" == "refs/heads/master" ]
+          then
+            echo "UPLOAD_DOCUMENTATION=true" >> $GITHUB_ENV
+            sudo apt-get install -qq doxygen graphviz
+          else
+            echo "UPLOAD_DOCUMENTATION=false" >> $GITHUB_ENV
+          fi
       - name: Install dependencies
         uses: jrl-umi3218/github-actions/install-dependencies@master
         with:
@@ -71,8 +72,7 @@ jobs:
           build-packages: trajectory_collection
           test-packages: trajectory_collection
       - name: Upload documentation
-        # Only run for one configuration and on origin master branch
-        if: matrix.os == 'ubuntu-22.04' && matrix.build-type == 'RelWithDebInfo' && matrix.mc-rtc-version == 'head' && github.repository_owner == 'isri-aist' && github.ref == 'refs/heads/master'
+        if: env.UPLOAD_DOCUMENTATION == 'true'
         run: |
           set -e
           set -x
