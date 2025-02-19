@@ -19,8 +19,6 @@ project(trajectory_collection LANGUAGES CXX)
 add_project_dependency(SpaceVecAlg REQUIRED)
 
 if(USE_ROS2)
-  set(DOXYGEN_HTML_OUTPUT html)
-
   # Eigen
   find_package(Eigen3 REQUIRED)
   include_directories(${EIGEN3_INCLUDE_DIR})
@@ -32,7 +30,6 @@ if(USE_ROS2)
 
   ament_package()
 else()
-  set(DOXYGEN_HTML_OUTPUT doxygen-html)
   set(BUILD_TESTING OFF)
   option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)
 endif()
