@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['t0_5f_55',['t0_',['../classTrajColl_1_1Polynomial.html#a8baa3059a9f733edef5c7bfc872242d8',1,'TrajColl::Polynomial']]],
-  ['tlowerlimit_5f_56',['tLowerLimit_',['../classTrajColl_1_1PiecewiseFunc.html#a05bba859efd92cf9980306405a0fa928',1,'TrajColl::PiecewiseFunc']]],
-  ['trajcoll_57',['TrajColl',['../namespaceTrajColl.html',1,'']]],
-  ['type_58',['type',['../structTrajColl_1_1BoundaryConstraint.html#a67417a95537203f3f617bafda71f0cff',1,'TrajColl::BoundaryConstraint']]]
+  ['value_58',['value',['../structTrajColl_1_1BoundaryConstraint.html#a40b1cbe06b4bd724e11f29dd5e1d0a58',1,'TrajColl::BoundaryConstraint']]],
+  ['vector1d_59',['Vector1d',['../classTrajColl_1_1CubicInterpolator.html#aa4ac5acf90d37ad45a6bab019fac791b',1,'TrajColl::CubicInterpolator']]],
+  ['velocity_60',['Velocity',['../namespaceTrajColl.html#ad2ea128f14ea130239b8ad02072e54bea88156d46910a2d733443c339a9231d12',1,'TrajColl']]]
 ];
