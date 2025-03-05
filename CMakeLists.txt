@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.8)
+cmake_minimum_required(VERSION 3.14)
+
 
 set(PROJECT_NAME trajectory_collection)
 set(PROJECT_GENERATED_HEADERS_SKIP_DEPRECATED ON)
@@ -27,8 +28,6 @@ if(USE_ROS2)
 
   include_directories(include ${ament_INCLUDE_DIRS})
   link_directories(${ament_LIBRARY_DIRS})
-
-  ament_package()
 else()
   set(BUILD_TESTING OFF)
   option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)
@@ -42,4 +41,8 @@ endif()
 
 if(INSTALL_DOCUMENTATION)
   add_subdirectory(doc)
+endif()
+
+if(USE_ROS2)
+  ament_package()
 endif()
