@@ -26,12 +26,8 @@ jobs:
       main-repo: isri-aist/TrajectoryCollection
       matrix: |
         {
-          "dist": ["focal", "jammy", "noble"],
-          "arch": ["amd64"],
-          "include":
-          [
-            {"dist": "bionic", "arch": "i386" }
-          ]
+          "dist": ["jammy", "noble"],
+          "arch": ["amd64"]
         }
     secrets:
       CLOUDSMITH_API_KEY: ${{ secrets.CLOUDSMITH_API_KEY }}
