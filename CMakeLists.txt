@@ -13,21 +13,19 @@ set(CXX_DISABLE_WERROR ON)
 option(USE_ROS2 "Use ROS2" OFF)
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 
-include(cmake/base.cmake)
 project(trajectory_collection LANGUAGES CXX)
 
 # SpaceVecAlg
-add_project_dependency(SpaceVecAlg REQUIRED)
+find_package(SpaceVecAlg REQUIRED)
 
 if(USE_ROS2)
   # Eigen
   find_package(Eigen3 REQUIRED)
   include_directories(${EIGEN3_INCLUDE_DIR})
 
-  find_package(ament_cmake REQUIRED) 
+  find_package(ament_cmake REQUIRED)
 
   include_directories(include ${ament_INCLUDE_DIRS})
-  link_directories(${ament_LIBRARY_DIRS})
 else()
   set(BUILD_TESTING OFF)
   option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)
@@ -44,5 +42,7 @@ if(INSTALL_DOCUMENTATION)
 endif()
 
 if(USE_ROS2)
+  ament_export_include_directories(include)
+  ament_export_targets(${PROJECT_NAME})
   ament_package()
 endif()
