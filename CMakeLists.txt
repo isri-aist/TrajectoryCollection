@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-
 set(PROJECT_NAME trajectory_collection)
 set(PROJECT_GENERATED_HEADERS_SKIP_DEPRECATED ON)
 set(PROJECT_GENERATED_HEADERS_SKIP_CONFIG ON)
@@ -10,6 +9,7 @@ set(PROJECT_DESCRIPTION "")
 set(CMAKE_CXX_STANDARD 17)
 set(PROJECT_USE_CMAKE_EXPORT TRUE)
 set(CXX_DISABLE_WERROR ON)
+
 option(USE_ROS2 "Use ROS2" OFF)
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 
@@ -19,13 +19,7 @@ project(trajectory_collection LANGUAGES CXX)
 find_package(SpaceVecAlg REQUIRED)
 
 if(USE_ROS2)
-  # Eigen
-  find_package(Eigen3 REQUIRED)
-  include_directories(${EIGEN3_INCLUDE_DIR})
-
   find_package(ament_cmake REQUIRED)
-
-  include_directories(include ${ament_INCLUDE_DIRS})
 else()
   set(BUILD_TESTING OFF)
   option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)

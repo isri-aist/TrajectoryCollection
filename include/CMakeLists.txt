@@ -1,8 +1,5 @@
 add_library(TrajColl INTERFACE)
 target_link_libraries(TrajColl INTERFACE SpaceVecAlg::SpaceVecAlg)
-if(DEFINED USE_ROS2)
-  target_link_libraries(TrajColl INTERFACE ${ament_LIBRARIES})
-endif()
 target_include_directories(TrajColl INTERFACE
   $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>
