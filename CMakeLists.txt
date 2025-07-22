@@ -14,6 +14,7 @@ option(USE_ROS2 "Use ROS2" OFF)
 option(INSTALL_DOCUMENTATION "Generate and install the documentation" OFF)
 
 project(trajectory_collection LANGUAGES CXX)
+include(GNUInstallDirs) # For CMAKE_INSTALL_LIBDIR
 
 # SpaceVecAlg
 find_package(SpaceVecAlg REQUIRED)
