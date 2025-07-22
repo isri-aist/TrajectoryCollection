@@ -39,4 +39,39 @@ if(USE_ROS2)
   ament_export_include_directories(include)
   ament_export_targets(${PROJECT_NAME})
   ament_package()
+else()
+  install(EXPORT ${PROJECT_NAME}
+    FILE ${PROJECT_NAME}Targets.cmake
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+    NAMESPACE ${PROJECT_NAME}::
+    )
+
+  include(CMakePackageConfigHelpers)
+  # generate the config file that is includes the exports
+  configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+    INSTALL_DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}"
+    NO_SET_AND_CHECK_MACRO
+    NO_CHECK_REQUIRED_COMPONENTS_MACRO
+    )
+
+  # generate the version file for the config file
+  # Extract version numbers from package.xml
+  file(READ package.xml PACKAGE_XML)
+  string(REGEX MATCH "<version>[0-9]+\\.[0-9]+\\.[0-9]+</version>" DIRTY_VERSION_STRING ${PACKAGE_XML})
+  string(REGEX REPLACE "^<version>([0-9]+)\\.([0-9]+)\\.([0-9]+)</version>$" "\\1" TC_MAJOR_VERSION "${DIRTY_VERSION_STRING}")
+  string(REGEX REPLACE "^<version>([0-9]+)\\.([0-9]+)\\.([0-9]+)</version>$" "\\2" TC_MINOR_VERSION "${DIRTY_VERSION_STRING}")
+  string(REGEX REPLACE "^<version>([0-9]+)\\.([0-9]+)\\.([0-9]+)</version>$" "\\3" TC_PATCH_VERSION "${DIRTY_VERSION_STRING}")
+  write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+    VERSION "${TC_MAJOR_VERSION}.${TC_MINOR_VERSION}.${TC_PATCH_VERSION}"
+    COMPATIBILITY AnyNewerVersion
+    )
+
+  # install config files
+  install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+    )
 endif()
